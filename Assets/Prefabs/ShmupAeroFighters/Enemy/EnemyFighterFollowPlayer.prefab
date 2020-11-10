@@ -332,8 +332,8 @@ MonoBehaviour:
   OnRoundOver:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2378410140637220895}
-        m_MethodName: Destroyenemy
+      - m_Target: {fileID: 2378410140637220894}
+        m_MethodName: SetDead
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

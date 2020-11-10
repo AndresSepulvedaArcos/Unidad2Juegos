@@ -13,7 +13,11 @@ public class GameManagerListenerComponent : MonoBehaviour
     {
         GameManager.OnGameStateChange += GameManager_OnGameStateChange;
     }
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChange -= GameManager_OnGameStateChange;
 
+    }
     private void GameManager_OnGameStateChange(EGameStates GameState)
     {
  
@@ -43,9 +47,5 @@ public class GameManagerListenerComponent : MonoBehaviour
    
     }
 
-    private void OnDisable()
-    {
-        GameManager.OnGameStateChange -= GameManager_OnGameStateChange;
-
-    }
+   
 }
