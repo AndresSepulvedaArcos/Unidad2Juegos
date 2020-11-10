@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2378410140637220894}
   - component: {fileID: 2378410140637220895}
   - component: {fileID: 2378410140637220892}
+  - component: {fileID: -7759737315498851611}
+  - component: {fileID: 7645551538453246573}
   m_Layer: 0
   m_Name: EnemyFighterFollowPath
   m_TagString: Enemy
@@ -151,6 +153,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -7759737315498851611}
+        m_MethodName: AddWinCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2378410140637220895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,3 +196,37 @@ MonoBehaviour:
   - {x: 0, y: -4.94}
   - {x: -3.16, y: -12.75}
   - {x: -3.8, y: -19.53}
+--- !u!114 &-7759737315498851611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378410140637220901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35523934d0625264f950a020f8c60559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultWinCount: 1
+--- !u!114 &7645551538453246573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378410140637220901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272d5b7bf79e53046b87d37d09a947eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRoundOver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRoundBegin:
+    m_PersistentCalls:
+      m_Calls: []

@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 9071536093791126845}
   - component: {fileID: 7418518352003971763}
   - component: {fileID: -6343925898604761194}
+  - component: {fileID: 7791376765784296073}
+  - component: {fileID: 57214169272048406}
   m_Layer: 0
   m_Name: EnemyFighterFollowPlayer
   m_TagString: Enemy
@@ -187,6 +189,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -6343925898604761194}
         m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7791376765784296073}
+        m_MethodName: AddWinCount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -288,3 +301,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 1
+--- !u!114 &7791376765784296073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378410140637220901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35523934d0625264f950a020f8c60559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultWinCount: 1
+--- !u!114 &57214169272048406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378410140637220901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272d5b7bf79e53046b87d37d09a947eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRoundOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2378410140637220895}
+        m_MethodName: Destroyenemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRoundBegin:
+    m_PersistentCalls:
+      m_Calls: []
