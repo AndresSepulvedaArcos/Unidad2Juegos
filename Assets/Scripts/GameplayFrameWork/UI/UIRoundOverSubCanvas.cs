@@ -9,9 +9,27 @@ public class UIRoundOverSubCanvas : MonoBehaviour
     public float fadeInTime = 0.2f;
     public float fadeOutTime = 0.2f;
 
+    [Header("Referencia al container")]
+    public GameObject container;
+    CanvasGroup canvasGroup;
+    private void Awake()
+    {
+        if(container==null)
+        {
+            canvasGroup=GetComponentInChildren<CanvasGroup>();
+            container = canvasGroup.gameObject;
+        }
+        if(canvasGroup==null)
+        {
+            canvasGroup = GetComponentInChildren<CanvasGroup>();
+
+        }
+    }
     private void OnEnable()
     {
+        container?.SetActive(false);
         GameManager.OnGameStateChange += GameManager_OnGameStateChange;
+       
     }
 
    
@@ -20,28 +38,28 @@ public class UIRoundOverSubCanvas : MonoBehaviour
     {
         GameManager.OnGameStateChange -= GameManager_OnGameStateChange;
     }
-    private void GameManager_OnGameStateChange(EGameStates NewGameState)
+    protected virtual void GameManager_OnGameStateChange(EGameStates NewGameState)
     {
         switch (NewGameState)
         {
             
             case EGameStates.ROUND_OVER:
-                ShowRoundOver();
+                ShowContainer();
                 break;
 
             default: HideRoundOver();break;
         }
     }
 
-    void ShowRoundOver()
+    protected void ShowContainer()
     {
-
-        GetComponent<CanvasGroup>()?.DOFade(1, fadeInTime);
+        container?.SetActive(true);
+        canvasGroup?.DOFade(1, fadeInTime);
     }
 
-    void HideRoundOver()
+    protected  void HideRoundOver()
     {
-
-        GetComponent<CanvasGroup>()?.DOFade(0, fadeOutTime);
+        container?.SetActive(false);
+        canvasGroup?.DOFade(0, fadeOutTime);
     }
 }
