@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager>
+namespace Taller
 {
-    public int score;
-
-    public static event FNotify_1Params<int> OnScoreChange;
-
-    public void AddScore(int ScoreToAdd)
+    public class GameManager : Singleton<GameManager>
     {
-        score += ScoreToAdd;
-        OnScoreChange?.Invoke(score);
+        public int score;
+
+        public static event FNotify_1Params<int> OnScoreChange;
+
+        public void AddScore(int ScoreToAdd)
+        {
+            score += ScoreToAdd;
+            OnScoreChange?.Invoke(score);
+        }
     }
 }
+
