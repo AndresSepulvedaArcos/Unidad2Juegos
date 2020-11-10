@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIGameOverSubCanvas : UISubCanvas
+public class UIGameplaySubCanvas : UISubCanvas
 {
     protected override void GameManager_OnGameStateChange(EGameStates NewGameState)
     {
         switch (NewGameState)
         {
 
-            case EGameStates.GAME_OVER:
+            case EGameStates.GAMEPLAY:
                 ShowContainer();
                 break;
 

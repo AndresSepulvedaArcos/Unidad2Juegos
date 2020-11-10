@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class GameManagerListenerComponent : MonoBehaviour
 {
-    public UnityEvent OnGameOver, OnRoundOver, OnRoundBegin;
+    public UnityEvent OnMainMenu,OnGameplayBegin, OnGameOver, OnRoundOver, OnRoundBegin;
 
 
     private void OnEnable()
@@ -24,17 +24,19 @@ public class GameManagerListenerComponent : MonoBehaviour
         switch (GameState)
         {
             case EGameStates.MAIN_MENU:
+                OnMainMenu?.Invoke();
                 break;
             case EGameStates.CONNECTING:
                 break;
             case EGameStates.RELOADING_ROUND:
                 break;
             case EGameStates.LOADING_NEXTROUND:
+                OnRoundBegin.Invoke();
                 break;
             case EGameStates.LOADING_REMATCH:
                 break;
             case EGameStates.GAMEPLAY:
-                OnRoundBegin.Invoke();
+                OnGameplayBegin?.Invoke();
                 break;
             case EGameStates.ROUND_OVER:
                 OnRoundOver.Invoke();
