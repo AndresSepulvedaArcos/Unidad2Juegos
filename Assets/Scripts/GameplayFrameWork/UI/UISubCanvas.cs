@@ -29,7 +29,9 @@ public class UISubCanvas : MonoBehaviour
              if(canvasGroup==null)
             {
                 container =transform.GetChild(0).gameObject;
-            }else
+                canvasGroup = container.GetComponent<CanvasGroup>();
+            }
+            else
             {
                 container = canvasGroup.gameObject;
             }

@@ -403,10 +403,10 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnerFollowPath
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1670611900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a8baa568271bb49aaf4137b8a5bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoBeginOnStart: 1
+  autoBeginOnStart: 0
   waitTime: 0.25
   timerLoopType: 1
   loopCount: 10
@@ -485,12 +485,9 @@ MonoBehaviour:
       m_Calls: []
   OnGameplayBegin:
     m_PersistentCalls:
-      m_Calls: []
-  OnGameOver:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1670611900}
-        m_MethodName: StopAllCoroutines
+        m_MethodName: BeginTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -500,6 +497,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
   OnRoundOver:
     m_PersistentCalls:
       m_Calls:
@@ -942,7 +942,12 @@ PrefabInstance:
     - target: {fileID: 2959714134787183454, guid: f36a93e6c530ca04abdb85d978a85544,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787129839700018043, guid: f36a93e6c530ca04abdb85d978a85544,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f36a93e6c530ca04abdb85d978a85544, type: 3}
