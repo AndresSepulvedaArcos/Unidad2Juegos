@@ -1219,6 +1219,7 @@ GameObject:
   - component: {fileID: 473697589}
   - component: {fileID: 473697588}
   - component: {fileID: 473697592}
+  - component: {fileID: 473697593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1394,6 +1395,21 @@ MonoBehaviour:
       m_Bits: 4294967291
     Distance: 0
   onPosition:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &473697593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473697585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33a21812ea90f8478735166a4dd83bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAxisMove:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &741426077

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef3f159e256c774b909c349102662b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchPower: 1
+  launchPower: 8
   isSelected: 0
 --- !u!114 &5835571780926714356
 MonoBehaviour:
