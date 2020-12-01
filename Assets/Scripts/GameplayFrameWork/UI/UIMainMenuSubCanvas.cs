@@ -21,6 +21,6 @@ public class UIMainMenuSubCanvas : UISubCanvas
 
     public void BeginGameplayCall()
     {
-        GameManager.Instance?.ChangeGameState(EGameStates.GAMEPLAY);
+        GameManager.Instance?.SetRoundBegin();
     }
 }

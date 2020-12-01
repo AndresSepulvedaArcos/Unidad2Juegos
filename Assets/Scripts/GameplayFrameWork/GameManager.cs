@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
- public enum ERoundWinCondition { CompleteTargetWinCount}
+ public enum ERoundWinCondition { CompleteTargetWinCount,RoundTimeCompleted,GoalFinish}
 
 namespace Taller
 {
@@ -38,7 +38,16 @@ namespace Taller
         }
         public void SetRoundOver()
         {
+
             ChangeGameState(EGameStates.ROUND_OVER); 
+            OnRoundOver.Invoke();
+
+        }
+        public void SetRoundOver(ERoundWinCondition Reason)
+        {
+            if (Reason != RoundWinCondition) return;
+
+            ChangeGameState(EGameStates.ROUND_OVER);
             OnRoundOver.Invoke();
 
         }

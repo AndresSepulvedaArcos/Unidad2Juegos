@@ -11,6 +11,9 @@ public class CharacterRunnerMovement : SerializedMonoBehaviour
     public float moveSpeed = 1f;
     public float customGravity = 2f;
     public float jumpForce = 2f;
+    public bool autoBegin = false;
+    [ReadOnly]
+    public bool canMove;
     public bool isOnAir;
     private void Awake()
     {
@@ -20,9 +23,17 @@ public class CharacterRunnerMovement : SerializedMonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (autoBegin)
+            canMove = true;
     }
-
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
     private void ApplyCustomGravity()
     {
         rb2D.AddForce(Vector2.down * customGravity);
@@ -37,7 +48,7 @@ public class CharacterRunnerMovement : SerializedMonoBehaviour
     }
     public void Jump()
     {
-        print("juump");
+    
         if (isOnAir) return;
 
         rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -45,6 +56,7 @@ public class CharacterRunnerMovement : SerializedMonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (canMove == false) return;
         CheckIsInFloor();
         AddMovementInput(1, 0);
         ApplyCustomGravity();
