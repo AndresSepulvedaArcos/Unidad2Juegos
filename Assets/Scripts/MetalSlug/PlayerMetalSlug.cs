@@ -5,12 +5,17 @@ using UnityEngine;
 public class PlayerMetalSlug : MonoBehaviour
 {
     public List<ItemTypes> currentItems;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitializeAttributes();
     }
 
+    void InitializeAttributes()
+    {
+        GetComponent<BulletsAttribute>().InitializeAttribute(20);
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Item"))
@@ -33,12 +38,14 @@ public class PlayerMetalSlug : MonoBehaviour
 
     void Shoot()
     {
+        /*
        GameObject bullet=  PlayerBulletPool.Instance.GetPooledObject(transform.position);
 
        
         bullet.GetComponent<Projectilecomponent>().LaunchProjectile(transform.right);
+        */
+        GetComponent<BulletsAttribute>().SubtractToValue(1);
 
-       
     }
     void Update()
     {

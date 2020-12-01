@@ -21,9 +21,15 @@ public class AttributeBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetValue(baseValue);
-    }
+     }
 
+    public void InitializeAttribute(float NewBaseValue)
+    {
+        baseValue=currentValue = NewBaseValue;
+        currentValue = Mathf.Clamp(currentValue, minValue, baseValue);
+        NotifyUI();
+
+    }
     public void SetValue(float NewValue)
     {
         currentValue = NewValue;
@@ -46,9 +52,11 @@ public class AttributeBase : MonoBehaviour
 
     private void NotifyUI()
     {
-         
-    }
-   
+        OnAttributeChange.Invoke(currentValue);
+        OnAttributeChangeWithPercent.Invoke(currentValue,currentValue/baseValue) ;
 
-   
+    }
+
+
+
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.UI;
 
-public class UIAttributeListener : SerializedBehaviour
+public class UIAttributeListener : SerializedMonoBehaviour
 {
     public TextMeshProUGUI attributeText;
     public Image percentBarFill;
